@@ -1,3 +1,7 @@
+## NEXT
+
+* Removes unnecessary Material imports.
+
 ## 2.4.3
 
 * Removes a LICENSE entry for code that no longer exists in the package.
