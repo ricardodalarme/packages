@@ -1,3 +1,7 @@
+## NEXT
+
+* Removes unnecessary Material imports.
+
 ## 4.1.2
 
 * Updates Chrome launch arguments to unblock Chrome 145+ upgrade.
