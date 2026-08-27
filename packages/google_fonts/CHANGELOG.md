@@ -1,5 +1,6 @@
 ## NEXT
 
+- Removes unnecessary Material and Cupertino imports.
 - Adds the `GoogleFontsLite` class to allow tree-shaking unused font code.
 - Added fonts:
   - `Akt`
