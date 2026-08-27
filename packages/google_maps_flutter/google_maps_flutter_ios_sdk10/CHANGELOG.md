@@ -1,3 +1,7 @@
+## NEXT
+
+* Removes unnecessary Material imports.
+
 ## 2.18.11
 
 * Converts heatmap controller and data conversion to Swift.

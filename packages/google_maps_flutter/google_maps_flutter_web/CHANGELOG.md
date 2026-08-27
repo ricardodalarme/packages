@@ -1,3 +1,7 @@
+## NEXT
+
+* Removes unnecessary Material imports.
+
 ## 0.6.3+1
 
 * Fixes flickering of byte-backed advanced markers when updating their position on web.
