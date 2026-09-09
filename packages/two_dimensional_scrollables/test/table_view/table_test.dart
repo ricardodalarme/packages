@@ -4,12 +4,13 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:leak_tracker_flutter_testing/leak_tracker_flutter_testing.dart';
 import 'package:two_dimensional_scrollables/two_dimensional_scrollables.dart';
+
+import '../test_widgets.dart';
 
 const TableSpan span = TableSpan(extent: FixedTableSpanExtent(100));
 const TableViewCell cell = TableViewCell(child: SizedBox.shrink());

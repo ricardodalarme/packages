@@ -2,10 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:two_dimensional_scrollables/two_dimensional_scrollables.dart';
+
+import '../test_widgets.dart';
 
 List<TreeViewNode<String>> simpleNodeSet = <TreeViewNode<String>>[
   TreeViewNode<String>('Root 0'),
