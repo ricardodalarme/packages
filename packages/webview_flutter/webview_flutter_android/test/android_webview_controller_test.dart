@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -33,6 +33,10 @@ import 'android_webview_controller_test.mocks.dart';
   MockSpec<android_webview.WebViewClient>(),
   MockSpec<android_webview.WebStorage>(),
 ])
+abstract final class Colors {
+  static const Color blue = Color(0xFF0000FF);
+}
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -2242,7 +2246,15 @@ void main() {
       );
 
       await tester.pumpWidget(
-        MaterialApp(home: Builder(builder: (BuildContext context) => webViewWidget.build(context))),
+        WidgetsApp(
+          color: const Color(0xFF000000),
+          pageRouteBuilder: <T>(RouteSettings settings, WidgetBuilder builder) =>
+              PageRouteBuilder<T>(
+                settings: settings,
+                pageBuilder: (BuildContext context, _, _) => builder(context),
+              ),
+          home: Builder(builder: (BuildContext context) => webViewWidget.build(context)),
+        ),
       );
       await tester.pumpAndSettle();
 

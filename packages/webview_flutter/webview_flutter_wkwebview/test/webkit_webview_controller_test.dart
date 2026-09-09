@@ -5,8 +5,8 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -32,6 +32,11 @@ import 'webkit_webview_controller_test.mocks.dart';
   MockSpec<UIViewWKWebView>(),
   MockSpec<WKWebsiteDataStore>(),
 ])
+abstract final class Colors {
+  static const Color transparent = Color(0x00000000);
+  static const Color red = Color(0xFFFF0000);
+}
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 

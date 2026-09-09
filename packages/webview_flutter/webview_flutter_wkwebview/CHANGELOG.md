@@ -1,3 +1,7 @@
+## NEXT
+
+* Removes unnecessary Material imports.
+
 ## 3.26.1
 
 * Updates pigeon dev_dependency to ^27.3.2 for analyzer 14 compatibility.

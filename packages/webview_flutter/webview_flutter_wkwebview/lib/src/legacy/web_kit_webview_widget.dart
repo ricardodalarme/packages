@@ -5,8 +5,8 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:path/path.dart' as path;
 // ignore: implementation_imports
 import 'package:webview_flutter_platform_interface/src/webview_flutter_platform_interface_legacy.dart';
@@ -221,7 +221,7 @@ class WebKitWebViewPlatformController extends WebViewPlatformController {
 
     if (params.backgroundColor case final Color backgroundColor) {
       unawaited(webView.setOpaque(false));
-      const Color transparent = Colors.transparent;
+      const transparent = Color(0x00000000);
       unawaited(
         webView.setBackgroundColor(
           UIColor(

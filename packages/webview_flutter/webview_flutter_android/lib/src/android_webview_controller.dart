@@ -6,9 +6,9 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:webview_flutter_platform_interface/webview_flutter_platform_interface.dart';
 
 import 'android_ssl_auth_error.dart';
@@ -1229,12 +1229,9 @@ class AndroidWebViewWidget extends PlatformWebViewWidget {
     if (controller._onShowCustomWidgetCallback == null) {
       controller.setCustomWidgetCallbacks(
         onShowCustomWidget: (Widget widget, OnHideCustomWidgetCallback callback) {
-          Navigator.of(context).push(
-            MaterialPageRoute<void>(
-              builder: (BuildContext context) => widget,
-              fullscreenDialog: true,
-            ),
-          );
+          Navigator.of(
+            context,
+          ).push(PageRouteBuilder<void>(pageBuilder: (_, _, _) => widget, fullscreenDialog: true));
         },
         onHideCustomWidget: () {
           Navigator.of(context).pop();

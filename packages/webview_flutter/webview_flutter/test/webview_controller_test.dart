@@ -4,7 +4,7 @@
 
 import 'dart:typed_data';
 
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -14,6 +14,10 @@ import 'package:webview_flutter_platform_interface/webview_flutter_platform_inte
 import 'webview_controller_test.mocks.dart';
 
 @GenerateMocks(<Type>[PlatformWebViewController, PlatformNavigationDelegate])
+abstract final class Colors {
+  static const Color green = Color(0xFF00FF00);
+}
+
 void main() {
   test('loadFile', () async {
     final mockPlatformWebViewController = MockPlatformWebViewController();
