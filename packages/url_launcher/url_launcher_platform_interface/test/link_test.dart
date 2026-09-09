@@ -5,7 +5,7 @@
 import 'dart:collection';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:url_launcher_platform_interface/link.dart';
@@ -13,7 +13,14 @@ import 'package:url_launcher_platform_interface/link.dart';
 void main() {
   testWidgets('Link with Navigator', (WidgetTester tester) async {
     await tester.pumpWidget(
-      MaterialApp(
+      WidgetsApp(
+        color: const Color(0xFF000000),
+        pageRouteBuilder: <T>(RouteSettings settings, WidgetBuilder builder) {
+          return PageRouteBuilder<T>(
+            settings: settings,
+            pageBuilder: (BuildContext context, _, __) => builder(context),
+          );
+        },
         home: const Placeholder(key: Key('home')),
         routes: <String, WidgetBuilder>{
           '/a': (BuildContext context) => const Placeholder(key: Key('a')),
@@ -33,7 +40,8 @@ void main() {
 
   testWidgets('Link with Navigator', (WidgetTester tester) async {
     await tester.pumpWidget(
-      MaterialApp.router(
+      WidgetsApp.router(
+        color: const Color(0xFF000000),
         routeInformationParser: _RouteInformationParser(),
         routerDelegate: _RouteDelegate(),
       ),
