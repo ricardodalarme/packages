@@ -1,3 +1,7 @@
+## NEXT
+
+* Removes unnecessary Material imports.
+
 ## 4.14.1
 
 * Adds documentation for `NavigationDelegate` callback parameters.

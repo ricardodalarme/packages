@@ -4,11 +4,15 @@
 
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:webview_flutter_android/src/legacy/webview_surface_android.dart';
 import 'package:webview_flutter_platform_interface/src/webview_flutter_platform_interface_legacy.dart';
+
+abstract final class Colors {
+  static const Color transparent = Color(0x00000000);
+}
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();

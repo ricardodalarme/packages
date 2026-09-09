@@ -5,8 +5,8 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -35,6 +35,11 @@ import 'web_kit_webview_widget_test.mocks.dart';
   WebViewWidgetProxy,
   WKWebpagePreferences,
 ])
+abstract final class Colors {
+  static const Color transparent = Color(0x00000000);
+  static const Color red = Color(0xFFFF0000);
+}
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 

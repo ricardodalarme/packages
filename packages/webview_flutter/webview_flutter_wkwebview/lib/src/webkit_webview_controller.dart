@@ -6,8 +6,8 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:path/path.dart' as path;
 import 'package:webview_flutter_platform_interface/webview_flutter_platform_interface.dart';
 
@@ -566,7 +566,7 @@ class WebKitWebViewController extends PlatformWebViewController {
 
   @override
   Future<void> setBackgroundColor(Color color) {
-    const Color transparent = Colors.transparent;
+    const transparent = Color(0x00000000);
     return Future.wait(<Future<void>>[
       _webView.setOpaque(false),
       _webView.setBackgroundColor(
