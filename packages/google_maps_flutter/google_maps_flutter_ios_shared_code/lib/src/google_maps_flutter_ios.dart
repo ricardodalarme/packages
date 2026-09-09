@@ -6,7 +6,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter/services.dart';
 import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platform_interface.dart';
 import 'package:stream_transform/stream_transform.dart';
@@ -204,16 +204,14 @@ class GoogleMapsFlutterIOS extends GoogleMapsFlutterPlatform {
 
   @override
   Future<void> updateMapConfiguration(MapConfiguration configuration, {required int mapId}) {
-    return _hostApi(
-      mapId,
-    ).updateMapConfiguration(_platformMapConfigurationFromMapConfiguration(configuration));
+    return _hostApi(mapId)
+        .updateMapConfiguration(_platformMapConfigurationFromMapConfiguration(configuration));
   }
 
   @override
   Future<void> updateMapOptions(Map<String, dynamic> optionsUpdate, {required int mapId}) {
-    return _hostApi(
-      mapId,
-    ).updateMapConfiguration(_platformMapConfigurationFromOptionsJson(optionsUpdate));
+    return _hostApi(mapId)
+        .updateMapConfiguration(_platformMapConfigurationFromOptionsJson(optionsUpdate));
   }
 
   @override

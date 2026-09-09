@@ -2,9 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:flutter/foundation.dart' show VoidCallback;
-import 'package:flutter/foundation.dart' show immutable;
-import 'package:flutter/material.dart' show Color, Colors;
+import 'package:flutter/widgets.dart';
 
 import 'types.dart';
 
@@ -24,10 +22,10 @@ class Circle implements MapsObject<Circle> {
   const Circle({
     required this.circleId,
     this.consumeTapEvents = false,
-    this.fillColor = Colors.transparent,
+    this.fillColor = const Color(0x00000000),
     this.center = const LatLng(0.0, 0.0),
     this.radius = 0,
-    this.strokeColor = Colors.black,
+    this.strokeColor = const Color(0xFF000000),
     this.strokeWidth = 10,
     this.visible = true,
     this.zIndex = 0,

@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:collection/collection.dart';
-import 'package:flutter/foundation.dart' show VoidCallback, immutable, listEquals;
-import 'package:flutter/material.dart' show Color, Colors;
+import 'package:flutter/foundation.dart' show listEquals;
+import 'package:flutter/widgets.dart';
 
 import 'types.dart';
 
@@ -24,11 +24,11 @@ class Polygon implements MapsObject<Polygon> {
   const Polygon({
     required this.polygonId,
     this.consumeTapEvents = false,
-    this.fillColor = Colors.black,
+    this.fillColor = const Color(0xFF000000),
     this.geodesic = false,
     this.points = const <LatLng>[],
     this.holes = const <List<LatLng>>[],
-    this.strokeColor = Colors.black,
+    this.strokeColor = const Color(0xFF000000),
     this.strokeWidth = 10,
     this.visible = true,
     this.zIndex = 0,
