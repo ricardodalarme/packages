@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:devtools_app_shared/ui.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// A panel that displays an error message and a stack trace.
 class ErrorPanel extends StatelessWidget {
@@ -19,9 +19,14 @@ class ErrorPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+    final TextStyle errorTextStyle =
+        theme.textTheme.bodyMedium?.copyWith(color: theme.colorScheme.error) ??
+        TextStyle(color: theme.colorScheme.error);
+
     return Padding(
       padding: const EdgeInsets.all(densePadding),
-      child: Text('Error:\n$error\n\n$stackTrace', style: Theme.of(context).errorTextStyle),
+      child: Text('Error:\n$error\n\n$stackTrace', style: errorTextStyle),
     );
   }
 }

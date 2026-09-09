@@ -4,7 +4,7 @@
 
 import 'package:devtools_app_shared/service.dart';
 import 'package:devtools_extensions/devtools_extensions.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'src/shared_preferences_state_provider.dart';
 import 'src/ui/shared_preferences_body.dart';
