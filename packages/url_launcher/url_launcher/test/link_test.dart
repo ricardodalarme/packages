@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:url_launcher/link.dart';
 import 'package:url_launcher/src/link.dart';
@@ -114,7 +114,14 @@ void main() {
       FollowLink? followLink;
 
       await tester.pumpWidget(
-        MaterialApp(
+        WidgetsApp(
+          color: const Color(0xFF000000),
+          pageRouteBuilder: <T>(RouteSettings settings, WidgetBuilder builder) {
+            return PageRouteBuilder<T>(
+              settings: settings,
+              pageBuilder: (BuildContext context, _, __) => builder(context),
+            );
+          },
           routes: <String, WidgetBuilder>{
             '/': (BuildContext context) => Link(
               uri: uri,
