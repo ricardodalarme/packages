@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:devtools_app_shared/ui.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../async_state.dart';
 import '../shared_preferences_state.dart';
@@ -228,4 +228,11 @@ class _KeyItem extends StatelessWidget {
       ),
     );
   }
+}
+
+/// ColorScheme extension for [KeysPanel].
+extension KeysPanelColorScheme on ColorScheme {
+  /// The background color for selected rows.
+  Color get selectedRowBackgroundColor =>
+      brightness == Brightness.light ? const Color(0xFFC7C6CA) : const Color(0xFF5E5E62);
 }

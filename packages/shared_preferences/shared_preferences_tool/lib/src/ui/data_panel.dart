@@ -5,8 +5,8 @@
 import 'dart:convert';
 
 import 'package:devtools_app_shared/ui.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../async_state.dart';
 import '../shared_preferences_state.dart';
