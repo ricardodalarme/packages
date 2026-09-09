@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/foundation.dart' show VoidCallback, immutable, listEquals;
-import 'package:flutter/material.dart' show Color, Colors;
+import 'package:flutter/widgets.dart';
 
 import 'types.dart';
 
@@ -25,7 +25,7 @@ class Polyline implements MapsObject<Polyline> {
   const Polyline({
     required this.polylineId,
     this.consumeTapEvents = false,
-    this.color = Colors.black,
+    this.color = const Color(0xFF000000),
     this.endCap = Cap.buttCap,
     this.geodesic = false,
     this.jointType = JointType.mitered,

@@ -1,3 +1,7 @@
+## NEXT
+
+* Removes unnecessary Material imports.
+
 ## 2.16.1
 
 * Fixes the `PinConfig` code sample in the `BitmapDescriptor` documentation.

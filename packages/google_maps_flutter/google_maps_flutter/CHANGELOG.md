@@ -1,3 +1,7 @@
+## NEXT
+
+* Removes unnecessary Material imports.
+
 ## 2.18.0
 
 * Adds support for mapTypeControlEnabled, fullscreenControlEnabled, and streetViewControlEnabled on web.

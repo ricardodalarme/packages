@@ -2,10 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platform_interface.dart';
+
+abstract final class Colors {
+  static const Color red = Color(0xFFFF0000);
+  static const Color green = Color(0xFF00FF00);
+  static const Color blue = Color(0xFF0000FF);
+}
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -736,12 +742,12 @@ void main() {
     test('construct with glyph bitmap', () async {
       const BitmapDescriptor bitmap = AssetBitmap(name: 'red_square.png');
       const pinConfig = PinConfig(
-        backgroundColor: Colors.black,
+        backgroundColor: Color(0xFF000000),
         borderColor: Colors.red,
         glyph: BitmapGlyph(bitmap: bitmap),
       );
 
-      expect(pinConfig.backgroundColor, Colors.black);
+      expect(pinConfig.backgroundColor, const Color(0xFF000000));
       expect(pinConfig.borderColor, Colors.red);
       expect(pinConfig.toJson(), <Object>[
         PinConfig.type,
@@ -752,7 +758,7 @@ void main() {
               'bitmap': <Object>['fromAsset', 'red_square.png'],
             },
           ],
-          'backgroundColor': Colors.black.toARGB32(),
+          'backgroundColor': const Color(0xFF000000).toARGB32(),
           'borderColor': Colors.red.toARGB32(),
         },
       ]);

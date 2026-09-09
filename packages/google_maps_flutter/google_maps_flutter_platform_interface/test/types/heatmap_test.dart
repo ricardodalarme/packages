@@ -2,9 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platform_interface.dart';
+
+abstract final class Colors {
+  static const Color red = Color(0xFFFF0000);
+  static const Color blue = Color(0xFF0000FF);
+}
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
